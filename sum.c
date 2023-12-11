@@ -12,15 +12,15 @@ int main()
     /* 随机数种，保证每次随机出来的数组中的数字不一样 */
     srand(time(NULL));  
     /* 定义一个存放随机数的数组 */  
-    int arraryNum[BUFFER_TOTAL];
+    int arrayNum[BUFFER_TOTAL];
     /* 初始化数组 */
-    memset(arraryNum, 0, sizeof(arraryNum));
+    memset(arrayNum, 0, sizeof(arrayNum));
     /* 生成随机数组 */
     for(int idx = 0; idx < BUFFER_TOTAL; idx++)
     {
-        arraryNum[idx] = rand() % RANGE;
+        arrayNum[idx] = rand() % RANGE;
         //arraryNum[idx] = rand() % TARGET;
-        printf("arrayNum[%d]:%d\n", idx, arraryNum[idx]);
+        printf("arrayNum[%d]:%d\n", idx, arrayNum[idx]);
         
     }
     int target;
@@ -32,17 +32,17 @@ int main()
     int flag = 0;
     
     /* 获取第一个数 */
-    for(int idx = 0; idx < BUFFER_TOTAL; idx++)
+    for(int idx = 0; idx < (BUFFER_TOTAL - 1); idx++)
     {
-        first_num = arraryNum[idx]; 
+        first_num = arrayNum[idx]; 
         /* 接着找满足条件的第二个数,并且从第一个数之后开始遍历 */
         for (int  index = (idx + 1); index < BUFFER_TOTAL; index++)
         {
-            second_num =  arraryNum[index] ;
+            second_num =  arrayNum[index] ;
             if(first_num + second_num == target) 
             {
                 flag = 1;
-                printf("arrayNum[%d]:%d,arrayNum[%d]:%d\n", idx, first_num, index, second_num);
+                printf("符合条件的值分别是:arrayNum[%d]:%d,arrayNum[%d]:%d\n", idx, first_num, index, second_num);
             }
         }
     }
