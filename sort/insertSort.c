@@ -16,6 +16,11 @@ int printArray(int *array, int length)
 int insertSort(int *array, int length)
 {   
     int ret = 0;
+    if (array == NULL)
+    {
+        return ret;
+    }
+    
     int copyNum = 0;
     int cur = 0;
     for (int idx = 1; idx < length; idx++)

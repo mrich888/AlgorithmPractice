@@ -6,6 +6,11 @@
 int selectSort(int *array, int length)
 {
     int ret = 0;
+    if (array == NULL)
+    {
+        return ret;
+    }
+    
     int minValue = 0;
     int minIndex = 0;
     for (int pos = 0; pos < length; pos++)
@@ -20,6 +25,7 @@ int selectSort(int *array, int length)
 
             }
         }
+        /* array[pos]不一定是最小值 */
         if(array[pos] > minValue)
         {
             int temp = array[pos];

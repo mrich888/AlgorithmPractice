@@ -53,8 +53,13 @@ void bubbleSort(int *array, int arraySize)
 #endif
 
 /* 优化02 */
-void bubbleSort(int *array, int length)
+int bubbleSort(int *array, int length)
 {
+    int ret = 0;
+    if (array == NULL)
+    {
+        return ret;
+    }
     /* 已经排好序的标志*/
     int sortedIndex = 0;
     /* 从后往前遍历 */
